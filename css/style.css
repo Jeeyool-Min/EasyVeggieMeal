@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+/* Overwrite sakura css*/
+body {
+  max-width: 60em !important;
+}
+h1 {
+  font-weight: 800;
+  color: cadetblue;
+}
+/* Overwrite sakura css */
+html,
+h1,
+h2,
+h3 {
+  font-family: "Open Sans", sans-serif !important;
+}
+h2,
+h3 {
+  font-weight: 700;
+}
+h2#selected-category {
+  margin-bottom: 15px;
+}
+div#content {
+  /* Display 4 items in a row*/
+  display: flex;
+  flex-flow: row wrap;
+}
+div.product-card-wrapper {
+  width: 240px;
+  margin: 20px;
+  /* Get rid of the line-height set by sakura css */
+  line-height: 0;
+}
+
+@media (min-width: 1123px) {
+  /* Remove margin of the first wrapper and the last one within a row in a full-screen */
+  div.product-card-wrapper:nth-child(4n) {
+    margin-right: 0;
+  }
+  div.product-card-wrapper:nth-child(4n + 1) {
+    margin-left: 0;
+  }
+}
+/* If the font-size gets smaller */
+@media (max-width: 684px) {
+  div.product-card-wrapper {
+    margin: 10px;
+  }
+  h3.product-title {
+    margin-bottom: 5px;
+  }
+  p.product-desc {
+    height: 60px !important;
+  }
+}
+/* If there's only an item to show per row */
+@media (max-width: 562px) {
+  div#content {
+    justify-content: space-evenly;
+  }
+}
+/* Mouse-hover effect on product card */
+div.product-card-wrapper:hover img.product-card-image {
+  filter: brightness(60%);
+}
+div.product-card-wrapper:hover {
+  cursor: pointer;
+}
+img.product-card-image {
+  /* If it were set as background of div instead of using img
+    background-repeat: no-repeat;    background-size: cover;    background-position-y: center;
+  */
+  height: 200px;
+  /* Make the border of top rounded */
+  border-radius: 10px 10px 0 0;
+  margin: 0;
+}
+div.product-card-desc {
+  /* Set spacing between texts for description as sakura css does */
+  line-height: 1.618;
+  background-color: white;
+  padding: 20px 15px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 3px 5px #d8d8d8;
+}
+
+h3.product-title {
+  font-size: 1em;
+  margin-top: 0;
+  height: 40px;
+  overflow: hidden;
+}
+p.product-desc {
+  height: 70px;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  overflow: hidden;
+  /* Apply ellipsis to multiline */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  /* Show three lines at most */
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+div.product-price {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
