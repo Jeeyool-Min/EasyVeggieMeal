@@ -79,7 +79,7 @@ function createProductCard(product) {
   // Create a product image, use the .card-image class
   const productImage = document.createElement("img");
   productImage.classList.add("product-card-image");
-  productImage.src = "../src/static/" + product.imageUrl;
+  productImage.src = "src/static/" + product.imageUrl;
   card.appendChild(productImage);
 
   // Create a product description wrapper and add a class for CSS
